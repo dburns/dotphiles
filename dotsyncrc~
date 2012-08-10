@@ -8,7 +8,7 @@
 #
 
 # Location of your dotfiles
- DOTFILES=.dotfiles
+# DOTFILES=.dotfiles
 
 # dotfiles to symlink
 #
@@ -31,7 +31,7 @@ dotsyncrc
 #grc
 #input/editrc
 #input/inputrc
-irssi
+#irssi
 #mercurial/hgrc
 #mercurial/hgignore
 #mutt
@@ -53,19 +53,19 @@ irssi
 #subversion
 #task/task
 #task/taskrc
-tmux/tmux.conf
+#tmux/tmux.conf
 #tmux/tmuxinator
-vim/dotvim:.vim
-vim/vimrc
+#vim/dotvim:.vim
+#vim/vimrc
 #vim/gvimrc
 #wget/wgetrc
 #zsh/fasdrc
-zsh/dotzsh:.zsh
-zsh/zlogin
-zsh/zlogout
-zsh/zprofile
-zsh/zshenv
-zsh/zshrc
+#zsh/dotzsh:.zsh
+#zsh/zlogin
+#zsh/zlogout
+#zsh/zprofile
+#zsh/zshenv
+#zsh/zshrc
 [endfiles]
 
 # Hosts to sync

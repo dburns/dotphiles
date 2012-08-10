@@ -35,8 +35,8 @@ $VERSION = '0.6ca';
 	original_contact => q(bd@bc-bd.org, veli@piipiip.net, tss@iki.fi, ).
 	                    q(wouter@coekaerts.be, jylefort@brutele.be),
 	authors          => q(Nei),
-	contact          => q(Nei@QuakeNet),
-	url              =>  "http://ai.onetrix.net/",
+	contact          => q(Nei @ anti@conference.jabber.teamidiot.de),
+	url              =>  "http://anti.teamidiot.de/",
 	name             => q(awl),
 	description      => q(Adds a permanent advanced window list on the right or ).
 	                    q(in a statusbar.),
@@ -258,7 +258,7 @@ $VERSION = '0.6ca';
 #
 # if you fiddle with my mess, provide me with your fixes so I can benefit as well
 #
-# Nei =^.^= ( QuakeNet accountname: ailin )
+# Nei =^.^= ( anti@conference.jabber.teamidiot.de )
 # }}}
 
 # }}}

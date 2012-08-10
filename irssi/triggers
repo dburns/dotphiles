@@ -1,0 +1,3 @@
+#Triggers file version 1.0
+-pubactions -channels '*' -pattern '*' -command 'echo -window hilight -level ACTIONS $C: >>> $N $1' 
+-pubnotices -channels '*' -pattern '*' -command 'echo -window hilight -level NOTICES $C:$N -> $1' 
