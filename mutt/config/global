@@ -11,34 +11,94 @@
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
+set alias_file=~/.mutt/alias
+set signature=~/.mutt/sig
+set tempdir=~/.mutt/temp
+set mailcap_path=~/.mutt/mailcap
 
 set folder_format="%2C %t %5N %8s %d %f"
+
+##FORMATTING##
+set date_format       = "%R  %d.%b.%y"
+set index_format      = "[%Z] %-25.25L  %.49s %> %D"
+set status_format     = "-%r- %v ---[ Folder: %f, Msgs: %m%?n? New: %n?%?d? Del: %d?%?t? Tag: %t?%?l? %l? ]%?p?---- .: %p waiting to send :. ?--%>- (%P) ---"
+set alias_format      = "%4n %t %-20a  %r"
+
+##HEADERS##
+ignore *                                              # ignore all headers
+unignore date: from: to: cc: subject:                 # show only these
+hdr_order date: from: to: cc: subject:                # and in this order
+
+##INDEX-SPECIFIC##
+set sort              = threads                       # Gmail-style sort
+set sort_aux          = reverse-last-date-received    # ...with newest on top
+set uncollapse_jump                                   # don't collapse on an unread message
+set sort_re                                           # thread based on regex
+set reply_regexp      = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+unset arrow_cursor
+
+##PAGER-SPECIFIC##
+set pager_index_lines = 10                             # number of index lines to show
+set pager_context     = 5                             # number of context lines to show
+set pager_stop                                        # don't go to next message automatically
+set menu_scroll                                       # scroll in menus
+set smart_wrap                                        # don't split words
+set tilde                                             # show tildes like in vim
+unset markers                                         # no ugly plus signs
+auto_view text/html                                   # view html automatically
+alternative_order text/plain text/enriched text/html  # ...but save it for last
+set quote_regexp      = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+
+##COMPOSITION-SPECIFIC##
+set sig_dashes                                        # dashes before my sig... sweet
+set edit_headers                                      # show headers when composing
+set fast_reply                                        # skip to compose when replying
+set sendmail_wait     = -1                            # don't wait for sending... to complete
+set askcc                                             # ask for CC:
+set fcc_attach                                        # save attachments with the body
+unset mime_forward                                    # forward attachments as part of body
+set forward_format    = "Fwd: %s"                     # format for subject when forwarding
+set forward_decode                                    # decode when forwarding
+set attribution       = "On %d, %n wrote:"            # set the attribution
+set reply_to                                          # reply to Reply to: field
+set reverse_name                                      # reply as whomever it was to
+set include                                           # include message in replies
+set forward_quote                                     # include message in forwards
 
 set move=no
 set edit_headers=yes
 set editor='vim +/^$ "+normal j"'
 set markers=no
-
-set sort='threads'
 set sort_aux=last-date-received
 set imap_check_subscribed
 set imap_keepalive=60
-set mail_check=60
-set timeout=15
-set quit=ask-yes
 set nobeep
-set mailcap_path=~/.mutt/mailcap
 auto_view text/html
-
 ignore "Authentication-Results:"
 ignore "DomainKey-Signature:"
 ignore "DKIM-Signature:"
-hdr_order Date From To Cc
 
-set pager_index_lines=10
+##KEYBINDINGS##
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop
+bind browser <left> exit
+bind browser <right> select-entry
+bind index <right> display-message
+bind pager <up> previous-line
+bind pager <down> next-line
+bind pager <left> exit
+bind pager <right> view-attachments
+bind attach <right> view-attach
+bind attach <left> exit
 
 # Macros
 macro index M "T.*\n;WN" "Mark all messages as read"
+macro index \eb '/~b ' 'search in message bodies'     #search message bodies in current folder
+macro index,pager  \cb |urlview\n 'call urlview to extract URLs out of a message'
+#macro index \Cr "<tag-prefix><clear-flag>N" "mark tagged messages as read"
+macro index <left> "<change-folder>?<toggle-mailboxes>"  "View Mailboxes"
+macro index Z   "<shell-escape>/usr/bin/offlineimap -o<enter>" "sync IMAP"
 
 # Settings
 source ~/.mutt/config/pgp

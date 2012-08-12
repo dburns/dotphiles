@@ -9,13 +9,28 @@
 
 # Setup mailboxes
 
+set mbox_type=Maildir
 set folder=$HOME/.mail/
-set spoolfile="+Gmail/INBOX"
+set spoolfile="+gprime/INBOX"
 
 set reverse_name=yes
-set from=**Your Email**
-set realname="**Your Name**"
-alternates **Your Work Email**
+set from=burns.derrick@gmail.com
+set use_envelope_from=yes
+set realname="Derrick R. Burns"
+#alternates **Your Work Email**
+set sort_alias        = alias                         # sort alias file by alias
+set reverse_alias                                     # show names from alias file in index
+unset move
+set delete
+unset confirmappend                                   # don't ask before moving message
+set quit
+unset mark_old                                        # don't mark messages 'Old' on quit
+set beep_new                                          # bell on new mails
+set pipe_decode                                       # strip headers and eval mimes when piping
+set thorough_search                                   # strip headers and eval mimes before searching
+
+
+
 
 source $HOME/.mutt/colors/solarized
 
@@ -24,6 +39,6 @@ source $HOME/.mutt/config/global
 source ~/.mutt/mailboxes.offlineimap
 
 # account specific sources
-folder-hook Gmail/* source ~/.mutt/gmail
-folder-hook Work/* source ~/.mutt/work
+folder-hook gprime/* source ~/.mutt/gprime
+#folder-hook Work/* source ~/.mutt/work
 

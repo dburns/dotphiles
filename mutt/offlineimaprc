@@ -9,51 +9,59 @@
 
 # In the general section
 [general]
+
+metadata=~/.offlineimap
 # Controls how many accounts may be synced simultaneously
 maxsyncaccounts = 2
-accounts=Gmail,Work
+accounts=gprime
 
 # In the account identifier
-[Account Gmail]
+[Account gprime]
 # Minutes between syncs
 autorefresh = 5
 # Number of quick-syncs between autorefreshes. Quick-syncs do not update if the
 # only changes were to IMAP flags
 quick = 10
-localrepository = Gmail-local
-remoterepository = Gmail-remote
+localrepository = gprime-local
+remoterepository = gprime-remote
 
-[Repository Gmail-local]
+[Repository gprime-local]
 type = Maildir
-localfolders = ~/.mail/Gmail/
+localfolders = ~/.mail/gprime/
 
-[Repository Gmail-remote]
+[Repository gprime-remote]
 type = Gmail
-remoteuser = username@gmail.com
+remoteuser = burns.derrick@gmail.com
 # "[Gmail]/Some Folder" --> some_folder
 nametrans = lambda folder: re.sub('^inbox$', 'INBOX',
                            re.sub(' +', '_',
                            re.sub(r'.*/(.*)$', r'\1', folder).lower()))
 
+remotehost = imap.gmail.com
+ssl=yes
+realdelete=no
+remoteport=993
+remotepassfile = /home/dburns/.netrc
+
 # In the account identifier
-[Account Work]
+#[Account Work]
 # Minutes between syncs
-autorefresh = 5
+#autorefresh = 5
 # Number of quick-syncs between autorefreshes. Quick-syncs do not update if the
 # only changes were to IMAP flags
-quick = 10
-localrepository = Work-local
-remoterepository = Work-remote
+#quick = 10
+#localrepository = Work-local
+#remoterepository = Work-remote
 
-[Repository Work-local]
-type = Maildir
-localfolders = ~/.mail/Work/
+#[Repository Work-local]
+#type = Maildir
+#localfolders = ~/.mail/Work/
 
-[Repository Work-remote]
-type = IMAP
-remotehost = imap.work.com
-remoteuser = username
-ssl = yes
+#[Repository Work-remote]
+#type = IMAP
+#remotehost = imap.work.com
+#remoteuser = username
+#ssl = yes
 
 [mbnames]
 enabled = yes
