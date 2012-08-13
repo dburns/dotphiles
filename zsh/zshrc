@@ -9,11 +9,11 @@
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':dotzsh:module:editor' keymap 'emacs'
+zstyle ':dotzsh:module:editor' keymap 'vi'
 zstyle ':dotzsh:module:editor' editor 'vi'
 
 # Auto convert .... to ../..
-zstyle ':dotzsh:module:editor' dot-expansion 'no'
+zstyle ':dotzsh:module:editor' dot-expansion 'yes'
 
 # Set case-sensitivity for completion, history lookup, etc.
 zstyle ':dotzsh:module:*' case-sensitive 'no'
@@ -48,7 +48,8 @@ zstyle ':dotzsh:load' dzmodule \
   'history' \
   'utility' \
   'completion' \
-  'theme'
+  'theme' \
+  'git'
 
 # Set the theme to load.
 # Setting it to 'random' loads a random theme.
