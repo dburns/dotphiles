@@ -40,8 +40,8 @@ servers = (
     use_ssl = "yes";
     ssl_verify = "yes";
     #ssl_cafile = "/usr/local/share/certs/ca-root-nss.crt";
-    ssl_capath = "/etc/ssl/certs";
-    #ssl_cacert = "/etc/ssl/GandiStandardSSLCA.pem";
+    ssl_capath = "/etc/ssl/";
+    ssl_cacert = "/etc/ssl/GandiStandardSSLCA.pem";
     autoconnect = "yes";
   },
 
@@ -293,13 +293,6 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
-    awl_1 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_1 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
   };
 };
 settings = {
@@ -386,10 +379,9 @@ windows = {
   };
 };
 
-ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
 
 mainwindows = {
   1 = { first_line = "1"; lines = "40"; };
-  2 = { first_line = "1"; lines = "12"; };
+  2 = { first_line = "1"; lines = "8"; };
 };
 

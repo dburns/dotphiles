@@ -65,3 +65,4 @@ source "$DOTZSH/init.zsh"
 
 # Customize to your needs...
 
+ fpath=(/home/.dotfiles/zsh/dotzsh/modules/completion/external/src $fpath)

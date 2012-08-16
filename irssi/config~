@@ -40,8 +40,8 @@ servers = (
     use_ssl = "yes";
     ssl_verify = "yes";
     #ssl_cafile = "/usr/local/share/certs/ca-root-nss.crt";
-    ssl_capath = "/etc/ssl/";
-    ssl_cacert = "/etc/ssl/GandiStandardSSLCA.pem";
+    ssl_capath = "/etc/ssl/certs";
+    #ssl_cacert = "/etc/ssl/GandiStandardSSLCA.pem";
     autoconnect = "yes";
   },
 
@@ -111,7 +111,7 @@ chatnets = {
   };
   SILC = { type = "SILC"; };
   RIPENCC = { type = "IRC"; };
-  Freenode = { type = "IRC"; nick="lowpass"; };
+  Freenode = { type = "IRC"; nick = "lowpass"; };
 };
 
 channels = (
@@ -121,8 +121,8 @@ channels = (
   { name = "##philosophy"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##not-physics"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#math"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##politics"; chatnet = "freenode"; autojoin = "yes"; }
- 
+  { name = "##politics"; chatnet = "freenode"; autojoin = "yes"; },
+
 );
 
 aliases = {
@@ -293,10 +293,21 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
-  core = { real_name = "Derrick Burns"; user_name = "lowpass"; nick = "lowpass"; };
+  core = {
+    real_name = "Derrick Burns";
+    user_name = "lowpass";
+    nick = "lowpass";
+  };
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = {
     ### For Solarized adv_windowlist.pl script
@@ -313,69 +324,71 @@ settings = {
     hilight_color = "= %R";
   };
 };
-hilights = ( { text = "lowpass"; color = "%M"; nick = "yes"; word = "yes"; } );
+hilights = (
+  { text = "lowpass"; color = "%M"; nick = "yes"; word = "yes"; }
+);
 keyboard = ( 
   { key = "meta-[M"; id = "command"; data = "mouse_xterm "; }
 );
 
 windows = {
-   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-   2 = { name = "hilight"; sticky = "yes"; };
-   3 = {
-     items = (
-       {
-         type = "CHANNEL";
-         chat_type = "IRC";
-         name = "##electronics";
-         tag = "freenode";
-       }
-     );
-   };
-   4 = {
-     items = (
-       {
-         type = "CHANNEL";
-         chat_type = "IRC";
-         name = "##security";
-         tag = "freenode";
-       }
-     );
-   };
-   5 = {
-     items = (
-       {
-         type = "CHANNEL";
-         chat_type = "IRC";
-         name = "##networking";
-         tag = "freenode";
-       }
-     );
-   };
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = { name = "hilight"; sticky = "yes"; };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##electronics";
+        tag = "freenode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##security";
+        tag = "freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##networking";
+        tag = "freenode";
+      }
+    );
+  };
   6 = {
-     items = (
-       {
-         type = "CHANNEL";
-         chat_type = "IRC";
-         name = "##not-physics";
-         tag = "freenode";
-       }
-     );
-   };
-   7 = {
-     items = (
-       {
-         type = "CHANNEL";
-         chat_type = "IRC";
-         name = "##philosophy";
-         tag = "freenode";
-       }
-     );
-   };
- };
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##not-physics";
+        tag = "freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##philosophy";
+        tag = "freenode";
+      }
+    );
+  };
+};
 
-   
-mainwindows = { 
-	1 = { first_line = "1"; lines = "40"; };
-	2 = { first_line = "1"; lines = "6"; };
- };
+
+mainwindows = {
+  1 = { first_line = "1"; lines = "40"; };
+  2 = { first_line = "1"; lines = "12"; };
+};
 
