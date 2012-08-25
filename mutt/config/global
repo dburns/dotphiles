@@ -69,7 +69,6 @@ set move=no
 set edit_headers=yes
 set editor='vim +/^$ "+normal j"'
 set markers=no
-set sort_aux=last-date-received
 set imap_check_subscribed
 set imap_keepalive=60
 set nobeep

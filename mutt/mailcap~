@@ -10,4 +10,4 @@
 text/html;      links %s; nametemplate=%s.html
 text/html;      links -dump %s; nametemplate=%s.html; copiousoutput
 text/pdf;	mupdf %s; nametemplate=%s.pdf;
-image/*;	feh %s; nametemplate=%s.png; 
+image/png;	feh %s; nametemplate=%s.png; 

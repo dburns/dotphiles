@@ -10,10 +10,10 @@
 # Sidebar
 # set up the sidebar, default not visible
 set meta_key=yes
-set sidebar_width=25
+set sidebar_width=20
 set sidebar_visible=yes
 color sidebar_new color33 default
-set sidebar_delim='  |  '
+set sidebar_delim='  ||  '
 
 #Sidebar Navigation
 bind index \ep sidebar-prev

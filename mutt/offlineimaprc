@@ -41,7 +41,8 @@ remotehost = imap.gmail.com
 ssl=yes
 realdelete=no
 remoteport=993
-remotepassfile = /home/dburns/.netrc
+remotepassfile = /home/dburns/.auth/gm-primary
+maxsyncconnections=3
 
 # In the account identifier
 #[Account Work]
