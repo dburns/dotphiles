@@ -32,22 +32,33 @@
 [color "branch"]
   current = yellow reverse
   local = yellow
-  remote = green
+  remote = magenta
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
+  whitespace = white reverse
 
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
+  branch = magenta
 
 [core]
   pager = less -FRSX
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[diff]
+  tool = vimdiff
+
+[difftool]
+  prompt = false
+
+[merge]
+  tool = vimdiff
 
 [alias]
   # branch

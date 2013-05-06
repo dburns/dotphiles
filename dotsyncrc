@@ -9,8 +9,6 @@
 
 # Location of your dotfiles
  DOTFILES=.dotfiles
-
-# dotfiles to symlink
 #
 # srcfile:dstfile
 # dstfile will be '.$srcfile' by default (with path removed)
@@ -19,12 +17,14 @@
 # Uncomment examples below
 dotsyncrc
 #ack/ackrc
+#aptitude
 #bin:bin
 #ctags/ctags
 curl/curlrc
 git/gitconfig
 git/gitignore
 git/gitattributes
+#cmus
 #git/tigrc
 #git/gitk
 gnupg
@@ -37,8 +37,11 @@ irssi
 mutt
 mutt/muttrc
 mutt/offlineimaprc
+#mysql/my.cnf
+#postgresql/psqlrc
 #python/pythonrc
 #python/pylintrc
+#rpm/rpmmacros
 #ruby/irbrc
 #ruby/pryrc
 #ruby/gemrc
@@ -69,16 +72,16 @@ zsh/zshrc
 [endfiles]
 
 # Hosts to sync
-## hostname                     type=masterhost, ANY or NONE
+## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
 [hosts]
-#host1.example.com               git=ANY                 #git repo, pull from anywhere
-#host2.example.com               git=ANY                 #git repo, pull from anywhere
-#host3.example.com               git=ANY                 #git repo, pull from anywhere
-#host4.example.com               git=host5.example.com   #git repo, pull from host5
-#host5.example.com               git=NONE                #git repo, local only
-#host6.example.net               rsync=host1.example.com #rsync mirror, push from host1
-#host7.example.net               rsync=host2.example.com #rsync mirror, push from host2
-#host8.example.net               rsync=host2.example.com #rsync mirror, push from host2
-#host9.example.net               rsync=host2.example.com #rsync mirror, push from host2
+#host1.example.com               git=ANY                        files=custom/dotfile    #git repo, pull from anywhere and link a custom dotfile
+#host2.example.com               git=ANY                                                #git repo, pull from anywhere
+#host3.example.com               git=ANY                                                #git repo, pull from anywhere
+#host4.example.com               git=host5.example.com                                  #git repo, pull from host5
+#host5.example.com               git=NONE                                               #git repo, local only
+#host6.example.net               rsync=host1.example.com                                #rsync mirror, push from host1
+#host7.example.net               rsync=host2.example.com                                #rsync mirror, push from host2
+#host8.example.net               rsync=host2.example.com                                #rsync mirror, push from host2
+#host9.example.net               rsync=host2.example.com                                #rsync mirror, push from host2
 [endhosts]
 
